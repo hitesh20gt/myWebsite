@@ -1,0 +1,31 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+      <div class="form-group">
+        <label for="csi_ID">csi_ID</label><br>
+        <input type="text" [(ngModel)]="employee.csi_ID" class="form-control" id="csi_ID" name="csi_ID"
+          placeholder="Enter app CSI_ID" required #CSI_ID="ngModel">
+      </div><br><br>
+      <!--div [hidden]="!CSI_ID.pristine" class="alert alert-danger">CSI_ID is required</div-->
+      <div class="form-group">
+        <label for="start">START_DATE</label><br>
+        <input type="date" [(ngModel)]="employee.start" class="form-control" id="start" name="start"
+          placeholder="Enter initial date" required #start="ngModel">
+      </div><br><br>
+      <!--div [hidden]="!start.pristine" class="alert alert-danger">Start date is required</div-->
+      <div class="form-group">
+        <label for="end">END_DATE</label><br>
+        <input type="date" [(ngModel)]="employee.end" class="form-control" id="end" name="end"
+          placeholder="Enter final date" required #end="ngModel">
+      </div><br><br>
+      <!--div [hidden]="!end.pristine" class="alert alert-danger">End date is required</div-->
+      <div class="form-group">
+        <label for="logs">APP LOGS</label><br>
+        <input type="text" [(ngModel)]="employee.logs" class="form-control" id="logs" name="logs"
+          placeholder="Enter app logs" required #logs="ngModel">
+      </div><br><br>
+      <!--div [hidden]="!logs.pristine" class="alert alert-danger">Logs are required</div-->
+      <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

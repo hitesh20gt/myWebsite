@@ -1,0 +1,22 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">csi_ID</th>
+            <th scope="col">start</th>
+            <th scope="col">end</th>
+            <th scope="col">logs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employee">
+            <td>{{ emp.csi_ID }}</td>
+            <td>{{ emp.start }}</td>
+            <td>{{ emp.end }}</td>
+            <td>{{ emp.logs }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
