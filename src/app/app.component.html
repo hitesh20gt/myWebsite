@@ -1,11 +1,9 @@
 <!-- saved from url=(0136)https://a.udemycdn.com/2019-08-23_05-33-38-2ef09f50675d6f46e53be04e6b97b2c8/original.html?nva=20200303175438&token=0771d733e4f2cc8c285b5 -->
-<html>
-
+<html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="Content-Type"
     content="text/html; charset=windows-1252">
 </head>
-
 <body>
   <div style="text-align:center">
     <h1>
@@ -38,25 +36,41 @@
     <input type="submit" value="SUBMIT">
   </form>
 </div-->
-  <form class="form-inline" (ngSubmit)="onSubmit(csi_ID,start,end)" #userForm="ngForm">
+  <!--form class="form-inline" (ngSubmit)="onSubmit(csi_ID,start,end)" #userForm="ngForm">
     <div class="form-group">
       <label for="csi_ID">csi_ID</label><br>
       <input type="text" name="csi_ID" (ngModel)="csi_ID" class="form-control" id="csi_ID" 
         placeholder="Enter app CSI_ID" required #csi_ID="ngModel">
     </div><br><br>
-    <!--div [hidden]="!CSI_ID.pristine" class="alert alert-danger">CSI_ID is required</div-->
     <div class="form-group">
       <label for="start">START_DATE</label><br>
       <input type="date" name="start" (ngModel)="start" class="form-control" id="start" 
         placeholder="Enter initial date" required #start="ngModel">
     </div><br><br>
-    <!--div [hidden]="!start.pristine" class="alert alert-danger">Start date is required</div-->
     <div class="form-group">
       <label for="end">END_DATE</label><br>
       <input type="date" name="end" (ngModel)="end" class="form-control" id="end"  placeholder="Enter final date"
         required #end="ngModel">
     </div><br><br>
     <button type="submit" [disabled]="!userForm.form.valid" class="btn btn-info">Submit</button>
+  </form><br><br-->
+
+  <form class="form-inline" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="csi_ID">csi_ID</label><br>
+      <input type="text" name="csi_ID" class="form-control" formControlName="csi_ID" id="csi_ID"
+        placeholder="Enter app CSI_ID">
+    </div><br><br>
+    <div class="form-group">
+      <label for="start">START_DATE</label><br>
+      <input type="date" name="start" class="form-control" formControlName="start" id="start"
+        placeholder="Enter initial date">
+    </div><br><br>
+    <div class="form-group">
+      <label for="end">END_DATE</label><br>
+      <input type="date" name="end" class="form-control" formControlName="end" id="end" placeholder="Enter final date">
+    </div><br><br>
+    <button type="submit" class="btn btn-info">Submit</button>
   </form><br><br>
 
   <!--div class="container">
@@ -67,10 +81,10 @@
             <h2 class="card-title text-center text-white py-3">{{ select }}</h2>
             <ul class="text-center list-inline py-3">
               <li class="list-inline-item">
-                <h3><a routerLink="/employees" class="btn btn-info">Display Logs</a></h3>
+                <h3><a routerLink="/employees" class="btn btn-info">View All Employees</a></h3>
               </li>
               <li class="list-inline-item">
-                <h3><a routerLink="/employeesAdd" class="btn btn-info">Add Employees</a></h3><br><br>
+                <h3><a routerLink="/employeesAdd" class="btn btn-info">Add Employee</a></h3><br><br>
               </li>
             </ul>
           </div>
@@ -90,14 +104,12 @@
         </thead>
         <tbody>
           <tr *ngFor="let log of logs">
-            <td>{{ log }}</td>
+            <td>{{log}}</td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
 
-
 </body>
-
 </html>

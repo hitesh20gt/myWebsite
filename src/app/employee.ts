@@ -1,6 +1,5 @@
 export class Employee {
     csi_ID: String;
-    start: Date;
-    end: Date;
+    date: Date;
     logs: String;
 }
