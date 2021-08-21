@@ -1,6 +1,9 @@
-# MyWebsite
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
+# Install VS code and Node JS on your system
+
+# Run--> {npm install -g @angular/cli} on command line to install angular cli.
+
+# Run cmd "ng serve --open" to build and launch the app.
 
 ## Development server
 
