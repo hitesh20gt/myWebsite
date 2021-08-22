@@ -1,4 +1,16 @@
 /* Style the form - display items horizontally */
+
+#logo{ 
+	position:fixed; 
+	top: 10px; 
+	left: 10px;
+} 
+
+#title{
+   position:relative;
+   padding-left: 50px;
+}
+
 .form-inline {
     display: flex;
     flex-flow: row wrap;
